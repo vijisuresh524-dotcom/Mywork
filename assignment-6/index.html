@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade Calculator</title>
+    <style>
+       .container{
+         height: 600px;
+         width: 600px;
+         background-color: rgb(239, 143, 143);
+         margin: auto;
+       } 
+       #sub1, #sub2, #sub3{
+        height: 50px;
+        width: 300px;
+        margin-top: 20px;
+       }
+       button{
+        height: 60px;
+        width: 150px;
+        background-color: rgb(133, 133, 231);
+        border-radius: 10px;
+        border: none;
+        font-size: larger;
+       }
+       h2{
+        padding-top: 30px;
+       }
+    </style>
+</head>
+<body style="text-align:center; padding:50px; font-family:Arial;">
+     <div class="container">
+    <h2>Grade Calculator</h2>
+
+    <input type="number" id="sub1" placeholder="Subject 1 Marks"><br><br>
+    <input type="number" id="sub2" placeholder="Subject 2 Marks"><br><br>
+    <input type="number" id="sub3" placeholder="Subject 3 Marks"><br><br>
+
+    <button onclick="calculateGrade()">Calculate</button>
+    </div>
+<script>
+function calculateGrade() {
+
+    let s1 = parseInt(document.getElementById("sub1").value);
+    let s2 = parseInt(document.getElementById("sub2").value);
+    let s3 = parseInt(document.getElementById("sub3").value);
+
+    let total = s1 + s2 + s3;
+    let average = total / 3;
+    let grade;
+
+    if (average >= 90) {
+        grade = "A";
+    } else if (average >= 75) {
+        grade = "B";
+    } else if (average >= 60) {
+        grade = "C";
+    } else if (average >= 40) {
+        grade = "D";
+    } else {
+        grade = "Fail";
+    }
+
+    document.write("<h2>Result</h2>");
+    document.write("Total: " + total + "<br>");
+    document.write("Average: " + average + "<br>");
+    document.write("Grade: " + grade);
+}
+</script>
+
+</body>
+</html>
