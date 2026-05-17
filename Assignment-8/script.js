@@ -1,80 +1,149 @@
-const apiurl="https://69ff62842b7ab349602f9698.mockapi.io/Listitems";
-const userForm=document.getElementById("userForm");
-const dateid = document.getElementById("date");
-const userinputid=document.getElementById("userid");
-const contentid=document.getElementById("content");
-const userlist=document.getElementById("userlist");
+let todos = [];
+let currentFilter = "all";
 
-async function fetchUsers(){
-    const res=await fetch(apiurl)
-    const users=await res.json();
-    console.log(users);
+function addTask() {
+    const taskInput = document.getElementById("taskInput");
+    const error = document.getElementById("error");
 
-    userlist.innerHTML="";
-users.forEach((u)=>{
-    const li=document.createElement("li");
-    li.className="list-group-item d-flex justify-content-center align-items-center"
-    li.innerHTML=` <input 
-            type="checkbox"
-            onchange="taskCompleted(this)"
-        >&nbsp;&nbsp;&nbsp;
-    <span> ${u.date}.......${u.content}</span>&nbsp;&nbsp;&nbsp;
-    <div>
-        <button class="btn btn-sm btn-warning me-2" onclick="editUser('${u.id}')">Edit</button>
-        </div>`
-    userlist.appendChild(li)
-})
-}
-fetchUsers();
-function taskCompleted(checkbox){
+    let taskText = taskInput.value.trim();
 
-    const taskText = checkbox.nextElementSibling;
-
-    if(checkbox.checked){
-       
+    if (taskText === "") {
+        error.innerText = "Task cannot be empty!";
+        return;
     }
-    else{
-        taskText.style.textDecoration = "none";
-        taskText.style.color = "black";
+
+    error.innerText = "";
+
+    const todo = {
+        id: Date.now(),
+        text: taskText,
+        completed: false
+    };
+
+    todos.push(todo);
+
+    taskInput.value = "";
+
+    displayTasks();
+}
+
+function displayTasks(filteredTasks = todos) {
+
+    const taskList = document.getElementById("taskList");
+
+    taskList.innerHTML = "";
+
+    filteredTasks.forEach((todo) => {
+
+        const li = document.createElement("li");
+        li.classList.add("task-item");
+
+        li.innerHTML = `
+            <span class="${todo.completed ? 'completed' : ''}">
+                ${todo.text}
+            </span>
+
+            <div class="task-buttons">
+                <button class="complete-btn" onclick="toggleComplete(${todo.id})">
+                    ${todo.completed ? "Undo" : "Complete"}
+                </button>
+
+                <button class="edit-btn" onclick="editTask(${todo.id})">
+                    Edit
+                </button>
+
+                <button class="delete-btn" onclick="deleteTask(${todo.id})">
+                    Delete
+                </button>
+            </div>
+        `;
+
+        taskList.appendChild(li);
+    });
+}
+
+function toggleComplete(id) {
+
+    todos = todos.map(todo => {
+        if (todo.id === id) {
+            return {
+                ...todo,
+                completed: !todo.completed
+            };
+        }
+        return todo;
+    });
+
+    applyFilter();
+}
+
+
+function editTask(id) {
+
+    let newTask = prompt("Edit your task");
+
+    if (newTask === null || newTask.trim() === "") {
+        alert("Task cannot be empty");
+        return;
+    }
+
+    todos = todos.map(todo => {
+        if (todo.id === id) {
+            return {
+                ...todo,
+                text: newTask
+            };
+        }
+        return todo;
+    });
+
+    applyFilter();
+}
+
+function deleteTask(id) {
+
+    if (confirm("Are you sure you want to delete this task?")) {
+
+        todos = todos.filter(todo => todo.id !== id);
+
+        applyFilter();
     }
 }
+function filterTasks(type) {
 
-userForm.addEventListener("submit", async(e)=>{
-     e.preventDefault();//To avoid rendering
-     const id=userinputid.value;
-     const userdata={
-        date:dateid.value,
-        content:contentid.value,
-     }
-     console.log(id);
-     
-     if(id){
-        //update
-         await fetch(`${apiurl}/${id}`,{
-            method:"PUT",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(userdata),
-        })
-     }else{
-        
-        
-        await fetch(apiurl,{
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(userdata),
-        })
-     }
-     userForm.reset();
+    currentFilter = type;
 
-     fetchUsers();
-})
- async function editUser(id){
-    alert(id)
-  const res=await fetch(`${apiurl}/${id}`)
-   const user=await res.json();
-   console.log(user);
-   userinputid.value=user.id;
-   dateid.value=user.date;
-   contentid.value=user.content;    
+    applyFilter();
 }
 
+function applyFilter() {
+
+    let filtered = [];
+
+    if (currentFilter === "completed") {
+        filtered = todos.filter(todo => todo.completed);
+    }
+    else if (currentFilter === "pending") {
+        filtered = todos.filter(todo => !todo.completed);
+    }
+    else {
+        filtered = todos;
+    }
+
+    displayTasks(filtered);
+}
+
+function searchTask() {
+
+    const searchValue = document
+        .getElementById("searchInput").value.toLowerCase();
+
+    let searchedTasks = todos.filter(todo =>
+        todo.text.toLowerCase().includes(searchValue)
+    );
+
+    displayTasks(searchedTasks);
+}
+
+
+displayTasks();
