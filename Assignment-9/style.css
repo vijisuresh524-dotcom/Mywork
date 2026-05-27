@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #eecfcf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    width: 500px;
+    background: rgb(203, 247, 223);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3709f0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button{
+    padding: 10px;
+    background-color: #007bff;
+    color: rgb(10, 9, 9);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover{
+    background-color: #0056b3;
+}
+
+#search{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    align-items: bottom;
+}
+
+.contact-card{
+    background: #f5f3f3;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.contact-card h3{
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.contact-card p{
+    margin-bottom: 5px;
+    color: #121010;
+}
+
+.actions{
+    margin-top: 10px;
+}
+
+.actions button{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(13, 12, 12);
+    margin-right: 10px;
+}
+
+.edit-btn{
+    background-color: green;
+}
+
+.delete-btn{
+    background-color: red;
+}
+
+#message{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
