@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h2>Sign Up</h2>
+            <h3>Create an Account</h3>
+            <form id="signup">
+                <div class="inputfield">
+                    <input type="text" id="fullname" placeholder="Enter Name">
+                    <small class="error"></small>
+                    </div>
+                    <div class="inputfield">
+                        <input type="email" id="email" placeholder="Enter Email">
+                        <small class="error"></small>
+                    </div>
+                    <div class="inputfield">
+                        <input type="text" id="phonenumber" placeholder="Phone number">
+                        <small class="error"></small>
+                    </div>
+                    <div class="inputfield">
+                        <input type="text" id="place" placeholder="LOcation">
+                        <small class="error"></small>
+                    </div>
+                    <div class="passwordfield">
+                        <input type="password" id="password" placeholder="Enter Password">
+                        <span class="toggle" onclick="togglepassword('password')">👁️</span>
+                        <small class="error"></small>
+                    </div>    
+                    <div class="passwordfield">
+                        <input type="password" id="confirmpassword" placeholder="Confirm Password">
+                        <span class="toggle" onclick="togglepassword('confirmpassword')">👁️</span>
+                        <small class="error"></small>
+                    </div>    
+                    <button type="submit">Sign UP</button> 
+                    <p class="tosignin">Already Have An Account? <a href="sign-in.html">Sign In</a></p>       
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

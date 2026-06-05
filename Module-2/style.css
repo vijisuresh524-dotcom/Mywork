@@ -1,0 +1,155 @@
+
+
+/* sign up , sign in pages */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#73abdc,#10eaf6);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.container{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.form{
+  background:#fff;
+  padding:2rem;
+  width:100%;
+  max-width:400px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:1.5rem;
+  color:#333;
+}
+h3{
+    text-align:center;
+    margin-bottom:1.5rem;
+    color:#333;
+}
+
+.inputfield{
+  margin-bottom:1rem;
+  position:relative;
+}
+
+.inputfield input{
+  width:100%;
+  padding:12px;
+  border:2px solid #ccc;
+  border-radius:8px;
+  font-size:1rem;
+}
+
+.inputfield input:focus{
+  border-color:#4facfe;
+  outline:none;
+}
+.passwordfield{
+ margin-bottom:1rem;
+  position:relative;   
+}
+.passwordfield input{
+   width:100%;
+  padding:12px;
+  border:2px solid #ccc;
+  border-radius:8px;
+  font-size:1rem;  
+}
+
+.passwordfield .toggle{
+  position:absolute;
+  right:12px;
+  top:12px;
+  cursor:pointer;
+}
+.passwordfield input:focus{
+  border-color:#4facfe;
+  outline:none;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  background:#4facfe;
+  color:white;
+  font-size:1rem;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#08708d;
+}
+
+.link{
+  text-align:center;
+  margin-top:1rem;
+}
+
+.link a{
+  color:#4facfe;
+  text-decoration:none;
+}
+
+.error{
+  color:red;
+  font-size:0.85rem;
+  margin-top:4px;
+  display:block;
+}
+
+.success{
+  border-color:green !important;
+}
+
+.failure{
+  border-color:red !important;
+}
+
+.tourist-page{
+  text-align:center;
+  color:white;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .form-box{
+    padding:1.5rem;
+  }
+
+  h2{
+    font-size:1.5rem;
+  }
+}
+
+/* Tablet */
+@media(min-width:769px) and (max-width:1024px){
+  .form-box{
+    max-width:500px;
+  }
+}
+
+/* Desktop */
+@media(min-width:1025px){
+  .form-box{
+    max-width:450px;
+  }
+}
