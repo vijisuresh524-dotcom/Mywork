@@ -1,4 +1,4 @@
-const API_URL = "https://6a1710e41b90031f81b1f850.mockapi.io/PhoneBook";
+const API_URL = "https://6a2259755c61035328699fa4.mockapi.io/contacts";
 
 const contactForm = document.getElementById("contactForm");
 const contactListId = document.getElementById("contactList");
@@ -78,9 +78,9 @@ contactForm.addEventListener("submit", async function(e) {
     }
 
     const contactData = {
-        name,
-        phone,
-        email
+        name: name,
+        phone: phone,
+        email: email
     };
 
     try {
@@ -187,14 +187,12 @@ searchId.addEventListener("keyup", async function() {
     }
 });
 
-
 function showMessage(text, color) {
-
-    message.textContent = text;
-    message.style.color = color;
+    messageId.textContent = text;
+    messageId.style.color = color;
 
     setTimeout(() => {
-        message.textContent = "";
+        messageId.textContent = "";
     }, 3000);
 }
 
