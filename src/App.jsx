@@ -10,7 +10,7 @@ import Details from './pages/Details'
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter  basename="/Mywork/Assignment-11/" >
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home />}/>
