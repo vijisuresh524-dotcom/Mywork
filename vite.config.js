@@ -6,5 +6,5 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(),tailwindcss()
    ],
-    base:"/Mywork/Assignment-11/"
+    base:"/Mywork/Assignment-11/multi-page-routing/"
 })
