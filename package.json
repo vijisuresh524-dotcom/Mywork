@@ -2,7 +2,7 @@
   "name": "multi-page-routing",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://vijisuresh524-dotcom.github.io/Mywork/Assignment-11/multi-page-routing/",
+  "homepage": "https://vijisuresh524-dotcom.github.io/Mywork/",
   "type": "module",
   "scripts": {
     "dev": "vite",
