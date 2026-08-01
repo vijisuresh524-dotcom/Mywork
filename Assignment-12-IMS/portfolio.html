@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portFolio</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* HEADER */
+       header{
+        height: 10vh;
+        width:auto;
+        background-color: bisque;
+        color: blueviolet;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+       }
+       .logo{
+        font-weight: 800;
+        /* padding-bottom: 30px; */
+        align-items: center;
+       }
+       nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       }
+       nav ul{
+        list-style-type: none;
+        display: flex;
+        gap: 30px;
+        /* padding: 20px; */
+        padding-right: 50px;
+       }
+       nav ul a{
+     text-decoration: none;
+     font-weight: 700;
+       }
+       section{
+        background-image: url(images/port.jpg);
+        background-size: cover;
+        height: 90vh;
+        display: flex;
+       }
+       section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+       }
+       section h1{
+      
+        font: size 900px;;
+        padding: 20px;
+         color: blueviolet;
+       }
+       section h2{
+        color: blueviolet;       
+       }
+       /* ABOUT SECTION */
+       .about{
+        text-align: center;
+        height: 80vh;
+        padding: 20px;
+        background-color: aqua;
+        color: blueviolet;
+       }
+       .about img{
+        border-radius: 30px;
+       }
+       .about h2{
+        font-weight: 1000;
+        font-size: 900;
+        color: blueviolet;
+       }
+       .about h3{
+        font-weight: 700;
+        color: blueviolet;
+       }
+       .title{
+        font-weight: 1000;
+        font-size: 900;
+        color: blueviolet;
+         text-align: center;
+       }
+       /* SKILL SECTION */
+       .skill{
+        /* text-align: center; */
+        height: 70vh;
+        padding: 20px;
+        background-color: rgb(249, 163, 175);
+        color: blueviolet;
+        /* display: flex; */
+       
+
+       }
+        .card{
+        font-weight: 700;
+        color: blueviolet;
+        height: fit-content;
+        width: 300px;
+       margin-left: 560px;
+        border: 2px solid rgb(226, 43, 43);
+        border-radius: 10px;
+        display: flex;
+        padding: 20px;
+       }
+       /* PROJECTS SECTION */
+       .projects h2{
+        font-weight: 1000;
+        font-size: 900;
+        color: blueviolet;
+         text-align: center;
+       }
+       .projects{
+        text-align: center;
+        height: 160vh;
+        padding: 20px;
+        background-color: rgb(81, 235, 179);
+        color: blueviolet;
+       }
+         .pro{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          margin-left: 10px;
+
+         }
+         .pro img{
+            width: 300px;
+            height: 200px;
+            border-radius: 20px;
+         }
+         /* FOOTER SECTION */
+         footer{
+            text-align: center;
+            padding: 100px;
+            background-color: bisque;
+            color: blueviolet;
+            height: 20vh;
+         }
+
+    </style>
+</head>
+<body>
+    <!-- HEADER SECTION -->
+   <header>
+    <h1 class="logo">My Portfolio</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skill">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+           
+
+        </ul>
+   </header> 
+   <section>
+      <h1> Hi! I Am Vijayashanthi</h1> <br\>
+      <h2> I Am a Fullstack Developer</h2>
+
+   </section>
+   <!-- ABOUT SECTION -->
+   <div class="about" id="about">
+    <h2>About Me</h2>
+        <img src="images/Viji.jpg" alt="Vijayashanthi profile image" width="300" height="400">
+        <h3>Web Developer & Designer</h3>
+        <p><b>Hello!</b>I am a passionate web developer, who enjoys building clean, responsive and<br>
+        user friendly websites using <bold> HTML </bold> and <bold> CSS </bold>and <bold color="red">Figma Design</bold></p>
+   </div>
+   <!-- SKILL SECTION -->
+   <div class="skill" id="skill">
+    <h2 class="title">Skills</h2>
+    <p class="card"><b>HTML:</b> &nbsp;&nbsp;&nbsp;I have a strong command of HTML, allowing me to create well-structured and semantically meaningful web pages.</p>
+    <p class="card"><b>CSS:</b>&nbsp;&nbsp;&nbsp; I am proficient in CSS, enabling me to design visually appealing and responsive websites that adapt seamlessly to different devices.</p>
+    <p class="card"><b>Figma Design:</b>&nbsp;&nbsp;&nbsp; I have experience with Figma, a powerful design tool, which allows me to create stunning and user-friendly interfaces for web applications.</p>
+   </div>
+   <!-- PROJECT SECTION -->
+       <div class="projects" id="projects">
+        <h2>My Projects</h2>
+        <article class="pro">
+            <img src="images/E-commerce.png" alt="Screen shot of E-commerce website project">
+            <h3>E-commerce Website</h3>
+            <p style="color: black;">A fully responsive online shopping weebsite built using <b style="color: blueviolet;">HTML</b> and <b style="color: blueviolet;">CSS</b></p>
+            <a href="#" target="_blank">View Project</a>
+        </article>
+<hr>
+        <article class="pro">
+            <img src="images/language.png" alt="Screen shot of language learning website">
+            <h3>Language Learning Website</h3>
+            <p style="color: black;">A user-friendly platform for learning new languages, featuring interactive lessons and quizzes.</p>
+            <a href="#" target="_blank">View Project</a>
+        </article>
+
+<hr>
+        <article class="pro">
+            <img src="images/builder.jpeg" alt="Screen shot of Builder Website">
+            <h3>Builder Website</h3>
+            <p style="color: black;">A modern construction website designed for showcasing projects and services.</p>
+            <a href="#" target="_blank">View Project</a>
+        </article>
+        
+       </div>
+       <!-- FOOTER SECTION -->
+        <footer>
+            <p>
+                &copy;2026 My Portfolio | Designed and Developed by Vijayashanthi
+            </p>
+            <p>
+                A personal portfolio highlighting my projects, technincal skills,<br>
+                 and continuous learning journey in web development and design.   </p>
+        </footer>
+
+</body>
+</html>
